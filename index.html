@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE 1110: Introduction to Computer Systems - Syllabus Embed</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        uiu: {
+                            orange: '#FF6B00',
+                            navy: '#0F172A',
+                            accent: '#6366F1'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.4);
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 107, 0, 0.7);
+        }
+    </style>
+</head>
+<body class="p-3 sm:p-6 antialiased selection:bg-amber-500 selection:text-slate-950">
+
+    <div class="max-w-7xl mx-auto space-y-6">
+
+        <!-- Header / Navigation Bar -->
+        <header class="glass-card rounded-2xl p-4 flex flex-col md:flex-row items-center justify-between gap-4 border border-slate-800">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-slate-950 font-black text-lg shadow-lg shadow-orange-500/20">
+                    UIU
+                </div>
+                <div>
+                    <h1 class="text-base font-extrabold text-white leading-tight flex items-center gap-2">
+                        <span>CSE 1110</span>
+                        <span class="text-xs px-2 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/30">Fall 2026</span>
+                    </h1>
+                    <p class="text-xs text-slate-400">Department of Computer Science and Engineering</p>
+                </div>
+            </div>
+
+            <!-- Global Nav Tabs -->
+            <nav class="flex flex-wrap items-center justify-center text-xs font-semibold bg-slate-900 border border-slate-800 rounded-xl p-1 gap-1">
+                <button onclick="switchTab('overview')" id="nav-btn-overview" class="px-3.5 py-1.5 rounded-lg bg-orange-600 text-white transition-all shadow-md">
+                    <i class="fa-solid fa-circle-info mr-1.5"></i>Course Info
+                </button>
+                <button onclick="switchTab('outcomes')" id="nav-btn-outcomes" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i>COs & POs
+                </button>
+                <button onclick="switchTab('timeline')" id="nav-btn-timeline" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-list-check mr-1.5"></i>Lab Outline
+                </button>
+                <button onclick="switchTab('assessment')" id="nav-btn-assessment" class="px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">
+                    <i class="fa-solid fa-calculator mr-1.5"></i>Grades & Calculator
+                </button>
+            </nav>
+        </header>
+
+        <!-- SECTION 1: COURSE OVERVIEW & INSTRUCTOR DETAILS -->
+        <section id="section-overview" class="space-y-6">
+            <!-- Hero Card -->
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-indigo-950/60 border border-slate-800 p-6 sm:p-8">
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <span>United International University</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                            Introduction to Computer Systems
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
+                            A fundamental 1.0 credit laboratory course covering internal computer mechanisms, memory vs. storage, algorithmic problem solving using flowcharts, Code.org logic, Beecrowd problem solving, and C programming.
+                        </p>
+
+                        <!-- Quick Badges -->
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-medium">
+                            <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/70 rounded-lg text-slate-300"><strong class="text-white">Code:</strong> CSE 1110</span>
+                            <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/70 rounded-lg text-slate-300"><strong class="text-white">Credits:</strong> 1.0 Hours</span>
+                            <span class="px-3 py-1 bg-slate-800/80 border border-slate-700/70 rounded-lg text-slate-300"><strong class="text-white">Trimester:</strong> Fall 2026</span>
+                            <span class="px-3 py-1 bg-indigo-500/10 border border-indigo-500/30 rounded-lg text-indigo-300"><strong class="text-white">Approved by:</strong> UGC</span>
+                        </div>
+                    </div>
+
+                    <!-- Section Schedule Switcher Card -->
+                    <div class="lg:col-span-4 bg-slate-950/80 border border-slate-800 rounded-2xl p-5 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-clock mr-1 text-amber-400"></i> Class Schedule</h3>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-slate-800 text-slate-300">Choose Section</span>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="selectSection('B')" id="sec-btn-B" class="p-3 text-left rounded-xl border border-amber-500 bg-amber-500/10 text-white transition-all">
+                                <span class="block text-xs font-extrabold">Section B</span>
+                                <span class="block text-[11px] text-amber-300 font-medium mt-0.5">Sun 2:00PM-4:30PM</span>
+                                <span class="block text-[10px] text-slate-400 mt-1">Room 726</span>
+                            </button>
+                            <button onclick="selectSection('F')" id="sec-btn-F" class="p-3 text-left rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700 transition-all">
+                                <span class="block text-xs font-extrabold text-white">Section F</span>
+                                <span class="block text-[11px] text-slate-300 font-medium mt-0.5">Wed 11:11AM-1:40PM</span>
+                                <span class="block text-[10px] text-slate-400 mt-1">Room 627</span>
+                            </button>
+                        </div>
+                        <div id="section-detail-banner" class="p-2.5 rounded-lg bg-slate-900/90 border border-slate-800 text-xs text-slate-300">
+                            Currently showing schedule for <strong class="text-white">Section B</strong> (Room 726).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Instructor & Course Information Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Instructor Card -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-indigo-400 text-xl font-bold">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Course Instructor</span>
+                            <h3 class="text-base font-bold text-white">Md. Tanvir Raihan</h3>
+                            <p class="text-xs text-slate-400">Department of CSE, UIU</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-xs pt-2 border-t border-slate-800">
+                        <div class="flex items-center justify-between py-1">
+                            <span class="text-slate-400"><i class="fa-solid fa-envelope mr-2 text-indigo-400"></i>Email</span>
+                            <a href="mailto:tanvir@cse.uiu.ac.bd" class="font-mono text-indigo-300 hover:underline">tanvir@cse.uiu.ac.bd</a>
+                        </div>
+                        <div class="flex items-center justify-between py-1">
+                            <span class="text-slate-400"><i class="fa-solid fa-location-dot mr-2 text-indigo-400"></i>Office Room</span>
+                            <span class="font-semibold text-white">Room #419(C)</span>
+                        </div>
+                        <div class="flex items-center justify-between py-1">
+                            <span class="text-slate-400"><i class="fa-solid fa-comments-question mr-2 text-indigo-400"></i>Counselling</span>
+                            <span class="font-semibold text-amber-400">Check UCAM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Textbooks & References -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-amber-400 text-xl font-bold">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Course Material</span>
+                            <h3 class="text-base font-bold text-white">Textbook & Reference</h3>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-xs pt-2 border-t border-slate-800">
+                        <div>
+                            <span class="text-slate-400 block mb-1">Main Text Book:</span>
+                            <p class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 font-bold text-slate-200">
+                                <i class="fa-solid fa-book mr-1.5 text-amber-400"></i>Programming in ANSI C
+                            </p>
+                        </div>
+                        <div>
+                            <span class="text-slate-400 block mb-1">Reference Material:</span>
+                            <p class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300">
+                                <i class="fa-solid fa-file-lines mr-1.5 text-indigo-400"></i>Lecture documents, Code.org & Beecrowd
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Methodology -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 text-xl font-bold">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <div>
+                            <span class="text-[10px] uppercase tracking-wider text-slate-400 font-bold block">Pedagogy</span>
+                            <h3 class="text-base font-bold text-white">Teaching Methods</h3>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 text-xs pt-2 border-t border-slate-800">
+                        <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center space-x-3">
+                            <i class="fa-solid fa-person-chalkboard text-emerald-400 text-base"></i>
+                            <div>
+                                <strong class="text-white block">Interactive Lectures</strong>
+                                <span class="text-slate-400 text-[11px]">Concept discussions and live coding.</span>
+                            </div>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center space-x-3">
+                            <i class="fa-solid fa-laptop-code text-cyan-400 text-base"></i>
+                            <div>
+                                <strong class="text-white block">Laboratory Exercises</strong>
+                                <span class="text-slate-400 text-[11px]">Hands-on algorithm implementation in C.</span>
+                            </div>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center space-x-3">
+                            <i class="fa-solid fa-file-circle-check text-indigo-400 text-base"></i>
+                            <div>
+                                <strong class="text-white block">Lab Reports & Viva</strong>
+                                <span class="text-slate-400 text-[11px]">Regular class tests, viva & problem solving.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: COURSE OUTCOMES (COs) & PROGRAM OUTCOMES (POs) -->
+        <section id="section-outcomes" class="hidden space-y-6">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-xl font-bold text-white">Course Outcomes (COs) & Program Outcomes (POs)</h2>
+                    <p class="text-xs text-slate-400">Verbatim UGC approved learning targets and accreditation mapping for CSE 1110</p>
+                </div>
+                <div class="flex rounded-xl bg-slate-900 p-1 border border-slate-800 text-xs font-semibold">
+                    <button onclick="toggleOutcomeSubTab('cos')" id="subtab-btn-cos" class="px-4 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition-all">Course Outcomes (CO1-4)</button>
+                    <button onclick="toggleOutcomeSubTab('pos')" id="subtab-btn-pos" class="px-4 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all">Program Outcomes (PO1-12)</button>
+                </div>
+            </div>
+
+            <!-- CO Subtab Content -->
+            <div id="subtab-cos-content" class="space-y-6">
+                <!-- CO Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3 relative overflow-hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-amber-400 font-extrabold text-xs">CO1</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Bloom's: C</span>
+                        </div>
+                        <p class="text-xs text-slate-200 leading-relaxed">
+                            Identify the components of a computer and demonstrate its internal mechanisms.
+                        </p>
+                        <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[10px] text-slate-400">
+                            <span>Evaluated in:</span>
+                            <span class="font-bold text-slate-200">Assignment, Midterm</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3 relative overflow-hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 font-extrabold text-xs">CO2</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Bloom's: C</span>
+                        </div>
+                        <p class="text-xs text-slate-200 leading-relaxed">
+                            Derive the solution steps and flowchart of any programs.
+                        </p>
+                        <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[10px] text-slate-400">
+                            <span>Evaluated in:</span>
+                            <span class="font-bold text-slate-200">Assignment, Midterm</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3 relative overflow-hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-extrabold text-xs">CO3</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Bloom's: C</span>
+                        </div>
+                        <p class="text-xs text-slate-200 leading-relaxed">
+                            Analyze the code to find errors and trace outputs manually.
+                        </p>
+                        <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[10px] text-slate-400">
+                            <span>Evaluated in:</span>
+                            <span class="font-bold text-slate-200">Final Exam, Viva</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3 relative overflow-hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-extrabold text-xs">CO4</span>
+                            <span class="text-[10px] uppercase font-bold text-slate-400 bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Bloom's: C</span>
+                        </div>
+                        <p class="text-xs text-slate-200 leading-relaxed">
+                            Use a programming language to write error-free programs.
+                        </p>
+                        <div class="pt-2 border-t border-slate-800/80 flex justify-between items-center text-[10px] text-slate-400">
+                            <span>Evaluated in:</span>
+                            <span class="font-bold text-slate-200">Final Exam, Viva</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CO Mapping Card -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800">
+                    <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-table-cells text-amber-400"></i>
+                        <span>CO with Assessment Methods Mapping</span>
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse text-xs">
+                            <thead>
+                                <tr class="border-b border-slate-800 text-slate-400 bg-slate-900/80">
+                                    <th class="p-3">Course Outcome (CO)</th>
+                                    <th class="p-3">Assessment Method</th>
+                                    <th class="p-3 text-right">Weightage (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-800/60 text-slate-200">
+                                <tr class="hover:bg-slate-900/40">
+                                    <td class="p-3 text-slate-400 font-mono">General</td>
+                                    <td class="p-3 font-semibold">Attendance</td>
+                                    <td class="p-3 text-right font-bold text-emerald-400">5%</td>
+                                </tr>
+                                <tr class="hover:bg-slate-900/40">
+                                    <td class="p-3 text-slate-400 font-mono">-</td>
+                                    <td class="p-3 font-semibold">Class Performance</td>
+                                    <td class="p-3 text-right font-bold text-indigo-400">30%</td>
+                                </tr>
+                                <tr class="hover:bg-slate-900/40">
+                                    <td class="p-3 text-slate-400 font-mono">CO1, CO2</td>
+                                    <td class="p-3 font-semibold">Assignment</td>
+                                    <td class="p-3 text-right font-bold text-cyan-400">15%</td>
+                                </tr>
+                                <tr class="hover:bg-slate-900/40">
+                                    <td class="p-3 text-slate-400 font-mono">CO3, CO4</td>
+                                    <td class="p-3 font-semibold">Viva</td>
+                                    <td class="p-3 text-right font-bold text-purple-400">10%</td>
+                                </tr>
+                                <tr class="hover:bg-slate-900/40">
+                                    <td class="p-3 text-slate-400 font-mono">CO1, CO2</td>
+                                    <td class="p-3 font-semibold">Midterm Exam</td>
+                                    <td class="p-3 text-right font-bold text-amber-400">20%</td>
+                                </tr>
+                                <tr class="hover:bg-slate-900/40">
+                                    <td class="p-3 text-slate-400 font-mono">CO3, CO4</td>
+                                    <td class="p-3 font-semibold">Final Exam</td>
+                                    <td class="p-3 text-right font-bold text-rose-400">20%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PO Subtab Content -->
+            <div id="subtab-pos-content" class="hidden space-y-4">
+                <div class="glass-card rounded-2xl p-4 border border-slate-800 flex items-center justify-between gap-4">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-magnifying-glass mr-1.5 text-indigo-400"></i> Search PO Statements</span>
+                    <input type="text" id="po-search" oninput="filterPOs()" placeholder="Search PO1-PO12 by keyword..." class="bg-slate-900 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs text-white max-w-xs w-full focus:outline-none focus:border-indigo-500">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="po-container">
+                    <!-- Dynamic rendering of POs -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: LAB OUTLINE TIMELINE WITH DUAL SECTION TRACKING -->
+        <section id="section-timeline" class="hidden space-y-6">
+            
+            <!-- Section Selection & Progress Tile Header -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div id="tile-sec-B" onclick="switchSectionTrack('B')" class="cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between border-amber-500 bg-amber-500/10 text-white shadow-lg">
+                    <div class="space-y-1">
+                        <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">ACTIVE TRACKER</span>
+                        <h3 class="text-sm font-extrabold text-white">Section B Progress</h3>
+                        <p class="text-xs text-slate-300">Sun 2:00PM - 4:30PM | Room 726</p>
+                    </div>
+                    <div class="text-right">
+                        <span id="progress-pct-B" class="text-xl font-black text-amber-400">0%</span>
+                        <span id="progress-cnt-B" class="block text-[10px] text-slate-400">0/12 completed</span>
+                    </div>
+                </div>
+
+                <div id="tile-sec-F" onclick="switchSectionTrack('F')" class="cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700">
+                    <div class="space-y-1">
+                        <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider">SWITCH TO TRACKER</span>
+                        <h3 class="text-sm font-extrabold text-white">Section F Progress</h3>
+                        <p class="text-xs text-slate-300">Wed 11:11AM - 1:40PM | Room 627</p>
+                    </div>
+                    <div class="text-right">
+                        <span id="progress-pct-F" class="text-xl font-black text-slate-400">0%</span>
+                        <span id="progress-cnt-F" class="block text-[10px] text-slate-500">0/12 completed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Tracker Bar & Filters -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="glass-card rounded-2xl p-5 border border-slate-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center text-xs font-semibold text-slate-400 mb-2">
+                            <span id="active-tracker-label">SECTION B TRACK</span>
+                            <span id="progress-percentage" class="text-amber-400 font-bold">0%</span>
+                        </div>
+                        <div class="w-full bg-slate-900 rounded-full h-2.5 overflow-hidden border border-slate-800">
+                            <div id="progress-bar" class="bg-gradient-to-r from-amber-500 to-orange-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex justify-between items-end text-slate-400 text-xs">
+                        <span>Completed: <strong id="completed-count" class="text-white">0</strong>/12</span>
+                        <button onclick="resetActiveProgress()" class="text-slate-500 hover:text-rose-400 text-xs transition-colors">
+                            <i class="fa-solid fa-rotate-right mr-1"></i>Reset Track
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="glass-card rounded-2xl p-5 border border-slate-800 md:col-span-3 flex flex-col justify-between gap-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <span class="text-xs font-bold text-slate-400 uppercase tracking-wider"><i class="fa-solid fa-filter mr-1.5 text-amber-400"></i> Timeline Filters</span>
+                        <button onclick="clearFilters()" class="text-xs text-amber-400 hover:underline">Clear All</button>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-400 mb-1">COURSE OUTCOME</label>
+                            <select id="co-filter" onchange="renderTimeline()" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500">
+                                <option value="ALL">All COs (CO1 - CO4)</option>
+                                <option value="CO1">CO1 - Hardware & Internal Mechanisms</option>
+                                <option value="CO2">CO2 - Algorithms & Flowcharts</option>
+                                <option value="CO3">CO3 - Code Analysis & Tracing</option>
+                                <option value="CO4">CO4 - Programming Language Logic</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-400 mb-1">EVALUATION TYPE</label>
+                            <select id="eval-filter" onchange="renderTimeline()" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500">
+                                <option value="ALL">All Evaluation Methods</option>
+                                <option value="Group discussion">Group discussion</option>
+                                <option value="Class Test">Class Test</option>
+                                <option value="Exercise problem">Exercise problem</option>
+                                <option value="Assignment">Assignment</option>
+                                <option value="Exam">Major Exams / Viva</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-semibold text-slate-400 mb-1">SEARCH SYLLABUS</label>
+                            <div class="relative">
+                                <input type="text" id="search-filter" oninput="renderTimeline()" placeholder="Search topic or C syntax..." class="w-full bg-slate-900 border border-slate-700/80 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500">
+                                <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-2.5 text-slate-500 text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Card Container -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800 relative">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h2 id="timeline-header-title" class="text-lg font-bold text-white">Lab Schedule & Timeline (Classes 1 - 12)</h2>
+                        <p class="text-xs text-slate-400">Click any class item for modal breakdown & syllabus details</p>
+                    </div>
+                    <span id="filtered-badge" class="px-2.5 py-1 text-xs bg-slate-900 text-slate-300 rounded-full border border-slate-700">12 Classes</span>
+                </div>
+
+                <div class="relative pl-4 sm:pl-8 border-l-2 border-slate-800 space-y-6" id="timeline-container">
+                    <!-- Dynamic rendering -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ASSESSMENT & GRADE CALCULATOR SIMULATOR -->
+        <section id="section-assessment" class="hidden space-y-6">
+            
+            <!-- Prominent Grading Scale Table Card -->
+            <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div>
+                        <h2 class="text-lg font-extrabold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-award text-amber-400"></i>
+                            <span>Grading Scale Table</span>
+                        </h2>
+                        <p class="text-xs text-slate-400">Official UIU letter grade policy, percentage mark ranges, and Grade Points (GP).</p>
+                    </div>
+                    <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
+                        UIU Policy Standard
+                    </span>
+                </div>
+
+                <!-- Expanded Larger Area Grading Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs sm:text-sm">
+                        <thead>
+                            <tr class="text-slate-400 border-b border-slate-800 font-bold bg-slate-900/90">
+                                <th class="p-3">Letter Grade</th>
+                                <th class="p-3">Marks Range (%)</th>
+                                <th class="p-3">Grade Point</th>
+                                <th class="p-3">Letter Grade</th>
+                                <th class="p-3">Marks Range (%)</th>
+                                <th class="p-3">Grade Point</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-800/60 text-slate-200">
+                            <tr class="hover:bg-slate-900/40">
+                                <td class="p-3 font-extrabold text-emerald-400">A (Plain)</td>
+                                <td class="p-3 font-mono">90 - 100</td>
+                                <td class="p-3 font-mono font-bold text-emerald-400">4.00</td>
+                                <td class="p-3 font-extrabold text-indigo-300">C+ (Plus)</td>
+                                <td class="p-3 font-mono">70 - 73</td>
+                                <td class="p-3 font-mono font-bold">2.33</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/40">
+                                <td class="p-3 font-extrabold text-emerald-400">A- (Minus)</td>
+                                <td class="p-3 font-mono">86 - 89</td>
+                                <td class="p-3 font-mono font-bold text-emerald-400">3.67</td>
+                                <td class="p-3 font-extrabold text-indigo-300">C (Plain)</td>
+                                <td class="p-3 font-mono">66 - 69</td>
+                                <td class="p-3 font-mono font-bold">2.00</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/40">
+                                <td class="p-3 font-extrabold text-amber-400">B+ (Plus)</td>
+                                <td class="p-3 font-mono">82 - 85</td>
+                                <td class="p-3 font-mono font-bold text-amber-400">3.33</td>
+                                <td class="p-3 font-extrabold text-indigo-300">C- (Minus)</td>
+                                <td class="p-3 font-mono">62 - 65</td>
+                                <td class="p-3 font-mono font-bold">1.67</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/40">
+                                <td class="p-3 font-extrabold text-amber-400">B (Plain)</td>
+                                <td class="p-3 font-mono">78 - 81</td>
+                                <td class="p-3 font-mono font-bold text-amber-400">3.00</td>
+                                <td class="p-3 font-extrabold text-orange-400">D+ (Plus)</td>
+                                <td class="p-3 font-mono">58 - 61</td>
+                                <td class="p-3 font-mono font-bold">1.33</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/40">
+                                <td class="p-3 font-extrabold text-amber-400">B- (Minus)</td>
+                                <td class="p-3 font-mono">74 - 77</td>
+                                <td class="p-3 font-mono font-bold text-amber-400">2.67</td>
+                                <td class="p-3 font-extrabold text-orange-400">D (Plain)</td>
+                                <td class="p-3 font-mono">55 - 57</td>
+                                <td class="p-3 font-mono font-bold">1.00</td>
+                            </tr>
+                            <tr class="hover:bg-slate-900/40">
+                                <td colspan="3" class="p-3 text-slate-500 italic">Passing Minimum Marks: 55%</td>
+                                <td class="p-3 font-extrabold text-rose-400">F (Fail)</td>
+                                <td class="p-3 font-mono text-rose-400">&lt; 55</td>
+                                <td class="p-3 font-mono font-bold text-rose-400">0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                
+                <!-- Assessment Weights Chart -->
+                <div class="lg:col-span-5 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <h2 class="text-base font-bold text-white">Assessment Breakdown</h2>
+                            <span class="px-2.5 py-0.5 text-[10px] uppercase font-extrabold text-amber-400 bg-amber-500/10 border border-amber-500/30 rounded">100 Marks Total</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-4">Official evaluation weightage distribution.</p>
+
+                        <div class="relative flex justify-center items-center h-52 my-2">
+                            <canvas id="assessmentChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Breakdown Mini Badges -->
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800"><div class="flex items-center justify-between"><span class="text-slate-400 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Attendance</span><span class="font-bold text-white">5%</span></div></div>
+                        <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800"><div class="flex items-center justify-between"><span class="text-slate-400 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span> Class Perf.</span><span class="font-bold text-white">30%</span></div></div>
+                        <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800"><div class="flex items-center justify-between"><span class="text-slate-400 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span> Assignment</span><span class="font-bold text-white">15%</span></div></div>
+                        <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800"><div class="flex items-center justify-between"><span class="text-slate-400 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> Viva</span><span class="font-bold text-white">10%</span></div></div>
+                        <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800"><div class="flex items-center justify-between"><span class="text-slate-400 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span> Mid Term</span><span class="font-bold text-white">20%</span></div></div>
+                        <div class="p-2.5 bg-slate-900 rounded-xl border border-slate-800"><div class="flex items-center justify-between"><span class="text-slate-400 flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-rose-500"></span> Final Exam</span><span class="font-bold text-white">20%</span></div></div>
+                    </div>
+                </div>
+
+                <!-- Collapsible Optional Sample Grade Simulator -->
+                <div class="lg:col-span-7 glass-card rounded-2xl border border-slate-800 overflow-hidden">
+                    <details class="group">
+                        <summary class="p-5 font-bold text-slate-200 cursor-pointer flex justify-between items-center bg-slate-900/80 hover:bg-slate-900 transition-colors border-b border-slate-800/60">
+                            <span class="flex items-center gap-2 text-sm sm:text-base text-white">
+                                <i class="fa-solid fa-calculator text-amber-400"></i>
+                                Sample Grade Calculator Simulator
+                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">Ceiling Rule Active</span>
+                                <i class="fa-solid fa-chevron-down text-slate-400 group-open:rotate-180 transition-transform"></i>
+                            </div>
+                        </summary>
+
+                        <div class="p-6 space-y-6 bg-slate-950/40">
+                            <div class="flex items-center justify-between">
+                                <p class="text-xs text-slate-400">Enter percentage scores (0-100). Note: If fractional aggregate is strictly &gt; 0.1 (e.g. 89.15), ceiling rounding bumps it up to 90.</p>
+                                <button onclick="fillSampleScores()" class="text-xs text-amber-400 hover:text-amber-300 font-semibold whitespace-nowrap ml-2">
+                                    <i class="fa-solid fa-wand-magic-sparkles mr-1"></i>Sample Scores
+                                </button>
+                            </div>
+
+                            <!-- Input Table Container -->
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between gap-4 p-2.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                                    <label class="text-xs font-bold text-slate-200">Attendance (5%)</label>
+                                    <div class="w-28 flex items-center space-x-1">
+                                        <input type="number" id="score-att" min="0" max="100" value="100" oninput="calculateGrade()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-right text-xs text-white focus:outline-none focus:border-amber-500 font-mono">
+                                        <span class="text-xs text-slate-500">%</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-4 p-2.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                                    <label class="text-xs font-bold text-slate-200">Class Performance (30%)</label>
+                                    <div class="w-28 flex items-center space-x-1">
+                                        <input type="number" id="score-perf" min="0" max="100" value="85" oninput="calculateGrade()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-right text-xs text-white focus:outline-none focus:border-amber-500 font-mono">
+                                        <span class="text-xs text-slate-500">%</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-4 p-2.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                                    <label class="text-xs font-bold text-slate-200">Assignment (15%)</label>
+                                    <div class="w-28 flex items-center space-x-1">
+                                        <input type="number" id="score-ass" min="0" max="100" value="88" oninput="calculateGrade()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-right text-xs text-white focus:outline-none focus:border-amber-500 font-mono">
+                                        <span class="text-xs text-slate-500">%</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-4 p-2.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                                    <label class="text-xs font-bold text-slate-200">Viva (10%)</label>
+                                    <div class="w-28 flex items-center space-x-1">
+                                        <input type="number" id="score-viva" min="0" max="100" value="90" oninput="calculateGrade()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-right text-xs text-white focus:outline-none focus:border-amber-500 font-mono">
+                                        <span class="text-xs text-slate-500">%</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-4 p-2.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                                    <label class="text-xs font-bold text-slate-200">Mid Term Exam (20%)</label>
+                                    <div class="w-28 flex items-center space-x-1">
+                                        <input type="number" id="score-mid" min="0" max="100" value="82" oninput="calculateGrade()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-right text-xs text-white focus:outline-none focus:border-amber-500 font-mono">
+                                        <span class="text-xs text-slate-500">%</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between gap-4 p-2.5 bg-slate-900/80 rounded-xl border border-slate-800">
+                                    <label class="text-xs font-bold text-slate-200">Final Exam (20%)</label>
+                                    <div class="w-28 flex items-center space-x-1">
+                                        <input type="number" id="score-fin" min="0" max="100" value="90" oninput="calculateGrade()" class="w-full bg-slate-950 border border-slate-700 rounded-lg px-2 py-1 text-right text-xs text-white focus:outline-none focus:border-amber-500 font-mono">
+                                        <span class="text-xs text-slate-500">%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Output Banner -->
+                            <div class="p-4 rounded-xl bg-gradient-to-r from-amber-950/40 via-slate-900 to-slate-900 border border-amber-500/30 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider block">Calculated Aggregate</span>
+                                    <div class="flex items-baseline space-x-2">
+                                        <span id="final-percentage-text" class="text-3xl font-black text-white">87.0%</span>
+                                        <span id="letter-grade-text" class="px-2.5 py-0.5 rounded-md text-xs font-extrabold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">Grade: A-</span>
+                                    </div>
+                                    <span id="ceiling-rule-note" class="text-[10px] text-slate-400 mt-1 block">Exact raw aggregate: <strong id="raw-calc-text" class="text-slate-300 font-mono">86.70%</strong></span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-[10px] text-slate-400 block">Grade Point</span>
+                                    <span id="grade-point-text" class="text-xl font-bold text-amber-300 font-mono">3.67 / 4.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- CLASS DETAIL MODAL -->
+    <div id="class-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-6 shadow-2xl space-y-4 relative animate-in fade-in zoom-in-95 duration-200">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        // Official Program Outcomes Data
+        const poData = [
+            { id: 1, title: "Engineering knowledge", text: "Apply knowledge of mathematics, natural science, engineering fundamentals and Computer Science and Engineering to the solution of complex engineering problems." },
+            { id: 2, title: "Problem analysis", text: "Identify, formulate, research literature and analyse complex engineering problems reaching substantiated conclusions using first principles of mathematics, natural sciences and engineering sciences." },
+            { id: 3, title: "Design/development of solutions", text: "Design solutions for complex engineering problems and design systems, components or processes that meet specified needs with appropriate consideration for public health and safety, cultural, societal, and environmental considerations." },
+            { id: 4, title: "Investigation", text: "Conduct investigations of complex problems using research-based knowledge and research methods including design of experiments, analysis and interpretation of data, and synthesis of information to provide valid conclusions." },
+            { id: 5, title: "Modern tool usage", text: "Create, select and apply appropriate techniques, resources, and modern engineering and IT tools, including prediction and modelling, to complex engineering problems, with an understanding of the limitations." },
+            { id: 6, title: "The engineer and society", text: "Apply reasoning informed by contextual knowledge to assess societal, health, safety, legal and cultural issues and the consequent responsibilities relevant to professional engineering practice and solutions to complex engineering problems." },
+            { id: 7, title: "Environment and sustainability", text: "Understand and evaluate the sustainability and impact of professional engineering work in the solution of complex engineering problems in societal and environmental contexts." },
+            { id: 8, title: "Ethics", text: "Apply ethical principles and commit to professional ethics and responsibilities and norms of engineering practice." },
+            { id: 9, title: "Individual work and teamwork", text: "Function effectively as an individual, and as a member or leader in diverse teams and in multi-disciplinary settings." },
+            { id: 10, title: "Communication", text: "Communicate effectively on complex engineering activities with the engineering community and with society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations, and give and receive clear instructions." },
+            { id: 11, title: "Project management and finance", text: "Demonstrate knowledge and understanding of engineering management principles and economic decision-making and apply these to one's own work, as a member and leader in a team, to manage projects and in multidisciplinary environments." },
+            { id: 12, title: "Life-long learning", text: "Recognize the need for, and have the preparation and ability to engage in independent and life-long learning in the broadest context of technological change." }
+        ];
+
+        // Lab Schedule Outline Data
+        const labOutlineData = [
+            {
+                classNum: 1,
+                title: "UIU Rules & Computer Mechanism",
+                details: "UIU Rules, Code.org, Internal mechanism of computer, Parts of a computer and their basic functionalities, how computer works, memory vs. storage, Applications of different software's.",
+                evaluations: ["Group discussion"],
+                cos: ["CO1"],
+                type: "regular"
+            },
+            {
+                classNum: 2,
+                title: "Algorithm and Flowcharts",
+                details: "Algorithm and Flowcharts: Write algorithms and flowcharts for various real-life problems.",
+                evaluations: ["Group discussion"],
+                cos: ["CO2"],
+                type: "regular"
+            },
+            {
+                classNum: 3,
+                title: "Introduction to C and Beecrowd",
+                details: "Codeblocks, basic syntax, data types, variables, built-in functions, account create, solving problems.",
+                evaluations: ["Problem Solving"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 4,
+                title: "Problem Solving",
+                details: "Arithmetic operator, Logical and Relational operator, solve real-life problems.",
+                evaluations: ["Group discussion", "Class Test 1"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 5,
+                title: "Conditional Statement",
+                details: "Basic If_else_if_else, solve real life problems.",
+                evaluations: ["Group discussion"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 6,
+                title: "MID-TERM EXAM",
+                details: "Mid-Term Examination evaluating CO1 & CO2 concepts.",
+                evaluations: ["Exam"],
+                cos: ["CO1", "CO2"],
+                type: "exam"
+            },
+            {
+                classNum: 7,
+                title: "Conditional Statement Review",
+                details: "conditional statement, solve real-life problems, Introduction to switch case.",
+                evaluations: ["Group discussion", "Exercise problem"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 8,
+                title: "Conditional Statement",
+                details: "Nested switch case and solve real-life problems.",
+                evaluations: ["Group discussion", "Exercise problem"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 9,
+                title: "Problem Solving and Loop Introduction",
+                details: "Introduction to Loop.",
+                evaluations: ["Class Test 2"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 10,
+                title: "Loop or Iterative Approach",
+                details: "Loop, use case, different types of loops, for and while loop, syntax, solve real-life problems.",
+                evaluations: ["Group discussion", "Exercise problem", "Assignment - 2"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 11,
+                title: "Problem Solving",
+                details: "Problem solving, discussion about final topics and marks distribution.",
+                evaluations: ["Class Test 3"],
+                cos: ["CO3", "CO4"],
+                type: "regular"
+            },
+            {
+                classNum: 12,
+                title: "FINAL EXAM and Viva",
+                details: "Final Examination and Comprehensive Viva evaluating CO3 & CO4.",
+                evaluations: ["Exam", "Viva"],
+                cos: ["CO3", "CO4"],
+                type: "exam"
+            }
+        ];
+
+        // Section Tracker Active State
+        let activeSectionTrack = 'B'; // 'B' or 'F'
+        let completedClassesSectionB = JSON.parse(localStorage.getItem('completedClassesSectionB') || '[]');
+        let completedClassesSectionF = JSON.parse(localStorage.getItem('completedClassesSectionF') || '[]');
+        let chartInstance = null;
+
+        window.onload = function() {
+            renderPOs();
+            renderTimeline();
+            updateAllProgressSummary();
+            initChart();
+            calculateGrade();
+        };
+
+        // Section Switcher Handler
+        function switchSectionTrack(sec) {
+            activeSectionTrack = sec;
+            
+            const tileB = document.getElementById('tile-sec-B');
+            const tileF = document.getElementById('tile-sec-F');
+            const activeLabel = document.getElementById('active-tracker-label');
+
+            if (sec === 'B') {
+                tileB.className = "cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between border-amber-500 bg-amber-500/10 text-white shadow-lg";
+                tileF.className = "cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700";
+                activeLabel.innerText = "SECTION B TRACK";
+            } else {
+                tileF.className = "cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between border-amber-500 bg-amber-500/10 text-white shadow-lg";
+                tileB.className = "cursor-pointer p-4 rounded-2xl border transition-all flex items-center justify-between border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700";
+                activeLabel.innerText = "SECTION F TRACK";
+            }
+
+            renderTimeline();
+            updateAllProgressSummary();
+        }
+
+        function selectSection(sec) {
+            const btnB = document.getElementById('sec-btn-B');
+            const btnF = document.getElementById('sec-btn-F');
+            const banner = document.getElementById('section-detail-banner');
+
+            if (sec === 'B') {
+                btnB.className = "p-3 text-left rounded-xl border border-amber-500 bg-amber-500/10 text-white transition-all";
+                btnF.className = "p-3 text-left rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700 transition-all";
+                banner.innerHTML = 'Currently showing schedule for <strong class="text-white">Section B</strong> (Sunday 2:00 PM - 4:30 PM | Room 726).';
+            } else {
+                btnF.className = "p-3 text-left rounded-xl border border-amber-500 bg-amber-500/10 text-white transition-all";
+                btnB.className = "p-3 text-left rounded-xl border border-slate-800 bg-slate-900 text-slate-400 hover:border-slate-700 transition-all";
+                banner.innerHTML = 'Currently showing schedule for <strong class="text-white">Section F</strong> (Wednesday 11:11 AM - 1:40 PM | Room 627).';
+            }
+        }
+
+        // Global Nav Tabs Switcher
+        function switchTab(tabId) {
+            const sections = ['overview', 'outcomes', 'timeline', 'assessment'];
+            sections.forEach(s => {
+                document.getElementById(`section-${s}`).classList.add('hidden');
+                const btn = document.getElementById(`nav-btn-${s}`);
+                if (btn) btn.className = "px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all";
+            });
+
+            document.getElementById(`section-${tabId}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`nav-btn-${tabId}`);
+            if (activeBtn) activeBtn.className = "px-3.5 py-1.5 rounded-lg bg-orange-600 text-white transition-all shadow-md";
+
+            if (tabId === 'assessment' && chartInstance) {
+                chartInstance.update();
+            }
+        }
+
+        // Outcome Subtabs Toggle
+        function toggleOutcomeSubTab(sub) {
+            const btnCOs = document.getElementById('subtab-btn-cos');
+            const btnPOs = document.getElementById('subtab-btn-pos');
+            const contentCOs = document.getElementById('subtab-cos-content');
+            const contentPOs = document.getElementById('subtab-pos-content');
+
+            if (sub === 'cos') {
+                btnCOs.className = "px-4 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition-all";
+                btnPOs.className = "px-4 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all";
+                contentCOs.classList.remove('hidden');
+                contentPOs.classList.add('hidden');
+            } else {
+                btnPOs.className = "px-4 py-1.5 rounded-lg bg-amber-500 text-slate-950 font-bold transition-all";
+                btnCOs.className = "px-4 py-1.5 rounded-lg text-slate-400 hover:text-white transition-all";
+                contentPOs.classList.remove('hidden');
+                contentCOs.classList.add('hidden');
+            }
+        }
+
+        // Program Outcomes Renderer
+        function renderPOs() {
+            const container = document.getElementById('po-container');
+            container.innerHTML = poData.map(po => `
+                <div class="glass-card rounded-2xl p-4 border border-slate-800 space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2 py-0.5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 rounded text-xs font-mono font-bold">PO${po.id}</span>
+                        <h4 class="text-xs font-bold text-white">${po.title}</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">${po.text}</p>
+                </div>
+            `).join('');
+        }
+
+        function filterPOs() {
+            const query = document.getElementById('po-search').value.toLowerCase();
+            const filtered = poData.filter(po => 
+                `po${po.id}`.includes(query) ||
+                po.title.toLowerCase().includes(query) ||
+                po.text.toLowerCase().includes(query)
+            );
+            
+            const container = document.getElementById('po-container');
+            if (filtered.length === 0) {
+                container.innerHTML = `<p class="col-span-2 text-xs text-slate-500 py-4 text-center">No Program Outcomes found matching "${query}".</p>`;
+                return;
+            }
+
+            container.innerHTML = filtered.map(po => `
+                <div class="glass-card rounded-2xl p-4 border border-slate-800 space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2 py-0.5 bg-indigo-500/10 text-indigo-400 border border-indigo-500/30 rounded text-xs font-mono font-bold">PO${po.id}</span>
+                        <h4 class="text-xs font-bold text-white">${po.title}</h4>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">${po.text}</p>
+                </div>
+            `).join('');
+        }
+
+        // Section Class Completion Handler
+        function toggleComplete(classNum, event) {
+            event.stopPropagation();
+            if (activeSectionTrack === 'B') {
+                if (completedClassesSectionB.includes(classNum)) {
+                    completedClassesSectionB = completedClassesSectionB.filter(n => n !== classNum);
+                } else {
+                    completedClassesSectionB.push(classNum);
+                }
+                localStorage.setItem('completedClassesSectionB', JSON.stringify(completedClassesSectionB));
+            } else {
+                if (completedClassesSectionF.includes(classNum)) {
+                    completedClassesSectionF = completedClassesSectionF.filter(n => n !== classNum);
+                } else {
+                    completedClassesSectionF.push(classNum);
+                }
+                localStorage.setItem('completedClassesSectionF', JSON.stringify(completedClassesSectionF));
+            }
+            renderTimeline();
+            updateAllProgressSummary();
+        }
+
+        function resetActiveProgress() {
+            if (activeSectionTrack === 'B') {
+                completedClassesSectionB = [];
+                localStorage.removeItem('completedClassesSectionB');
+            } else {
+                completedClassesSectionF = [];
+                localStorage.removeItem('completedClassesSectionF');
+            }
+            renderTimeline();
+            updateAllProgressSummary();
+        }
+
+        function updateAllProgressSummary() {
+            // Section B
+            const countB = completedClassesSectionB.length;
+            const pctB = Math.round((countB / 12) * 100);
+            document.getElementById('progress-pct-B').innerText = `${pctB}%`;
+            document.getElementById('progress-cnt-B').innerText = `${countB}/12 completed`;
+
+            // Section F
+            const countF = completedClassesSectionF.length;
+            const pctF = Math.round((countF / 12) * 100);
+            document.getElementById('progress-pct-F').innerText = `${pctF}%`;
+            document.getElementById('progress-cnt-F').innerText = `${countF}/12 completed`;
+
+            // Active Track Display
+            const currentArr = (activeSectionTrack === 'B') ? completedClassesSectionB : completedClassesSectionF;
+            const activeCount = currentArr.length;
+            const activePct = Math.round((activeCount / 12) * 100);
+
+            document.getElementById('completed-count').innerText = activeCount;
+            document.getElementById('progress-percentage').innerText = `${activePct}%`;
+            document.getElementById('progress-bar').style.width = `${activePct}%`;
+        }
+
+        // Timeline Rendering
+        function renderTimeline() {
+            const activeCompleted = (activeSectionTrack === 'B') ? completedClassesSectionB : completedClassesSectionF;
+
+            const coVal = document.getElementById('co-filter').value;
+            const evalVal = document.getElementById('eval-filter').value;
+            const searchVal = document.getElementById('search-filter').value.toLowerCase();
+            const container = document.getElementById('timeline-container');
+
+            const filtered = labOutlineData.filter(item => {
+                const matchesCO = (coVal === 'ALL') || item.cos.includes(coVal);
+                const matchesEval = (evalVal === 'ALL') || item.evaluations.some(e => e.toLowerCase().includes(evalVal.toLowerCase()));
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) || 
+                                      item.details.toLowerCase().includes(searchVal) ||
+                                      `class ${item.classNum}`.includes(searchVal);
+                return matchesCO && matchesEval && matchesSearch;
+            });
+
+            document.getElementById('filtered-badge').innerText = `Showing ${filtered.length} of 12 classes`;
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="py-12 text-center text-slate-500">
+                        <i class="fa-solid fa-folder-open text-3xl mb-2"></i>
+                        <p class="text-xs">No lab classes match your filter criteria.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(item => {
+                const isCompleted = activeCompleted.includes(item.classNum);
+                const isExam = item.type === 'exam';
+
+                const coBadges = item.cos.map(co => `<span class="px-2 py-0.5 text-[10px] font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded">${co}</span>`).join(' ');
+                
+                const evalBadges = item.evaluations.map(ev => {
+                    let color = "bg-slate-800 text-slate-300 border-slate-700";
+                    if (ev.includes("Class Test")) color = "bg-amber-500/10 text-amber-400 border-amber-500/20";
+                    if (ev.includes("Exercise") || ev.includes("Problem")) color = "bg-cyan-500/10 text-cyan-400 border-cyan-500/20";
+                    if (ev.includes("Assignment")) color = "bg-indigo-500/10 text-indigo-300 border-indigo-500/20";
+                    if (ev.includes("Exam") || ev.includes("Viva")) color = "bg-rose-500/10 text-rose-400 border-rose-500/20";
+                    return `<span class="px-2 py-0.5 text-[10px] font-medium border rounded ${color}">${ev}</span>`;
+                }).join(' ');
+
+                let cardBg = "bg-slate-900/60 hover:bg-slate-900/90 border-slate-800";
+                let dotClass = "bg-slate-900 border-slate-700 text-slate-400";
+                
+                if (isCompleted) {
+                    dotClass = "bg-emerald-500 border-emerald-400 text-white shadow-lg shadow-emerald-500/30";
+                } else if (isExam) {
+                    cardBg = "bg-rose-950/20 hover:bg-rose-950/30 border-rose-500/30";
+                    dotClass = "bg-rose-600 border-rose-400 text-white animate-pulse";
+                }
+
+                return `
+                    <div class="relative group" onclick="openModal(${item.classNum})">
+                        <div class="absolute -left-[25px] sm:-left-[41px] top-1.5 w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center text-xs cursor-pointer transition-all ${dotClass}" onclick="toggleComplete(${item.classNum}, event)">
+                            ${isCompleted ? '<i class="fa-solid fa-check text-[10px]"></i>' : `<span class="font-bold text-[11px]">${item.classNum}</span>`}
+                        </div>
+
+                        <div class="p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer ${cardBg} hover:border-slate-700 shadow-lg">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                                <div class="flex items-center space-x-3">
+                                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Class ${item.classNum}</span>
+                                    <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-amber-300 transition-colors">${item.title}</h3>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-1.5">
+                                    ${coBadges}
+                                </div>
+                            </div>
+                            
+                            <p class="text-xs text-slate-300 leading-relaxed mb-4">${item.details}</p>
+                            
+                            <div class="flex items-center justify-between pt-3 border-t border-slate-800/80">
+                                <div class="flex flex-wrap items-center gap-1.5">
+                                    <span class="text-[10px] text-slate-500 uppercase mr-1">Evaluation:</span>
+                                    ${evalBadges}
+                                </div>
+                                <span class="text-[11px] text-amber-400 group-hover:translate-x-1 transition-transform inline-flex items-center font-semibold">
+                                    Modal Details <i class="fa-solid fa-chevron-right ml-1 text-[9px]"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Modal Handler
+        function openModal(classNum) {
+            const activeCompleted = (activeSectionTrack === 'B') ? completedClassesSectionB : completedClassesSectionF;
+            const item = labOutlineData.find(d => d.classNum === classNum);
+            if (!item) return;
+
+            const isCompleted = activeCompleted.includes(item.classNum);
+            
+            const content = `
+                <div class="flex items-center space-x-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
+                    <span>Lab Module ${item.classNum}</span>
+                    <span>•</span>
+                    <span>Section ${activeSectionTrack}</span>
+                    <span>•</span>
+                    <span>${item.cos.join(', ')}</span>
+                </div>
+                <h2 class="text-xl font-bold text-white">${item.title}</h2>
+                <div class="p-4 bg-slate-950/90 rounded-xl border border-slate-800">
+                    <h4 class="text-xs font-semibold text-slate-400 uppercase mb-2">Verbatim Topic Description</h4>
+                    <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">${item.details}</p>
+                </div>
+                
+                <div class="space-y-2">
+                    <h4 class="text-xs font-semibold text-slate-400 uppercase">Assessment Methods</h4>
+                    <div class="flex flex-wrap gap-2">
+                        ${item.evaluations.map(e => `<span class="px-3 py-1 bg-amber-500/10 text-amber-300 border border-amber-500/20 text-xs font-semibold rounded-lg">${e}</span>`).join('')}
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <button onclick="toggleComplete(${item.classNum}, event); closeModal();" class="px-4 py-2 text-xs font-bold rounded-xl transition-all ${isCompleted ? 'bg-slate-800 text-slate-300 hover:bg-slate-700' : 'bg-orange-600 text-white hover:bg-orange-500'}">
+                        ${isCompleted ? '<i class="fa-solid fa-xmark mr-1.5"></i> Mark Uncompleted' : '<i class="fa-solid fa-check mr-1.5"></i> Mark Completed for Sec ' + activeSectionTrack}
+                    </button>
+                    <button onclick="closeModal()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold rounded-xl">
+                        Close
+                    </button>
+                </div>
+            `;
+
+            document.getElementById('modal-content').innerHTML = content;
+            document.getElementById('class-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('class-modal').classList.add('hidden');
+        }
+
+        function clearFilters() {
+            document.getElementById('co-filter').value = 'ALL';
+            document.getElementById('eval-filter').value = 'ALL';
+            document.getElementById('search-filter').value = '';
+            renderTimeline();
+        }
+
+        // Chart Initialization
+        function initChart() {
+            const ctx = document.getElementById('assessmentChart').getContext('2d');
+            chartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Attendance', 'Class Performance', 'Assignment', 'Viva', 'Mid Term', 'Final Exam'],
+                    datasets: [{
+                        data: [5, 30, 15, 10, 20, 20],
+                        backgroundColor: ['#34d399', '#6366f1', '#22d3ee', '#a855f7', '#fbbf24', '#f43f5e'],
+                        borderWidth: 0,
+                        hoverOffset: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return ` ${context.label}: ${context.raw}%`;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '72%'
+                }
+            });
+        }
+
+        // Grade Calculation Logic (with >0.1 ceiling rule)
+        function calculateGrade() {
+            const att = parseFloat(document.getElementById('score-att')?.value) || 0;
+            const perf = parseFloat(document.getElementById('score-perf')?.value) || 0;
+            const ass = parseFloat(document.getElementById('score-ass')?.value) || 0;
+            const viva = parseFloat(document.getElementById('score-viva')?.value) || 0;
+            const mid = parseFloat(document.getElementById('score-mid')?.value) || 0;
+            const fin = parseFloat(document.getElementById('score-fin')?.value) || 0;
+
+            // Weights: Attendance 5%, Performance 30%, Assignment 15%, Viva 10%, Mid 20%, Final 20%
+            const rawTotal = (att * 0.05) + (perf * 0.30) + (ass * 0.15) + (viva * 0.10) + (mid * 0.20) + (fin * 0.20);
+
+            // Custom Ceiling Logic: If decimal part > 0.1, round up with Math.ceil()
+            let finalScore = rawTotal;
+            const integerPart = Math.floor(rawTotal);
+            const decimalPart = rawTotal - integerPart;
+
+            if (decimalPart > 0.1) {
+                finalScore = Math.ceil(rawTotal);
+            } else {
+                finalScore = Math.floor(rawTotal);
+            }
+
+            let letter = 'F';
+            let gp = '0.00';
+            let letterColor = 'bg-rose-500/20 text-rose-400 border-rose-500/30';
+
+            if (finalScore >= 90) { letter = 'A'; gp = '4.00'; letterColor = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'; }
+            else if (finalScore >= 86) { letter = 'A-'; gp = '3.67'; letterColor = 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'; }
+            else if (finalScore >= 82) { letter = 'B+'; gp = '3.33'; letterColor = 'bg-amber-500/20 text-amber-400 border-amber-500/30'; }
+            else if (finalScore >= 78) { letter = 'B'; gp = '3.00'; letterColor = 'bg-amber-500/20 text-amber-400 border-amber-500/30'; }
+            else if (finalScore >= 74) { letter = 'B-'; gp = '2.67'; letterColor = 'bg-amber-500/20 text-amber-400 border-amber-500/30'; }
+            else if (finalScore >= 70) { letter = 'C+'; gp = '2.33'; letterColor = 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'; }
+            else if (finalScore >= 66) { letter = 'C'; gp = '2.00'; letterColor = 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'; }
+            else if (finalScore >= 62) { letter = 'C-'; gp = '1.67'; letterColor = 'bg-indigo-500/20 text-indigo-400 border-indigo-500/30'; }
+            else if (finalScore >= 58) { letter = 'D+'; gp = '1.33'; letterColor = 'bg-orange-500/20 text-orange-400 border-orange-500/30'; }
+            else if (finalScore >= 55) { letter = 'D'; gp = '1.00'; letterColor = 'bg-orange-500/20 text-orange-400 border-orange-500/30'; }
+
+            document.getElementById('final-percentage-text').innerText = `${finalScore}%`;
+            document.getElementById('raw-calc-text').innerText = `${rawTotal.toFixed(2)}%`;
+            document.getElementById('grade-point-text').innerText = `${gp} / 4.00`;
+            
+            const letterElem = document.getElementById('letter-grade-text');
+            letterElem.innerText = `Grade: ${letter}`;
+            letterElem.className = `px-2.5 py-0.5 rounded-md text-xs font-extrabold border ${letterColor}`;
+        }
+
+        function fillSampleScores() {
+            document.getElementById('score-att').value = 100;
+            document.getElementById('score-perf').value = 89;
+            document.getElementById('score-ass').value = 90;
+            document.getElementById('score-viva').value = 90;
+            document.getElementById('score-mid').value = 85;
+            document.getElementById('score-fin').value = 90;
+            calculateGrade();
+        }
+    </script>
+</body>
+</html>
